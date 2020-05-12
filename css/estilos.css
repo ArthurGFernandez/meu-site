@@ -28,6 +28,8 @@ body {
   a:hover {
     text-decoration: underline;
     color: red;
+    background: ff0;
+    color: f00;
   }
   
   .site-subtitle, .site-title {
