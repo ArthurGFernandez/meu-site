@@ -2,20 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Troller Senpai</title>
     <link rel="stylesheet" href="css/estilos.css">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Major+Mono+Display&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/dbd0b4ebeb.js" crossorigin="anonymous"></script>
+  </head>
 <body>
     <header>
         <nav class="menu">
-         <ul>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Portfólio</a></li>
-            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Contato</a></li>
+         <ul class="container">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#portfolio">Curriculo</a></li>
+            <li><a href="#contato">Contato</a></li>
          </ul>
            </nav>
-          <h1 class="site-title">Troller-Senpai</h1>
-          <h3 class="site-subtitle">Jr. Web Developer</h3>
-    </header>    
+        <div class="titulo">
+            <h1 class="site-title">Troller-Senpai</h1>
+            <h3 class="site-subtitle">Jr. Web Developer</h3>
+        </div>         
+    </header> 
+    <section class="sobre container" id="sobre">
+      <h2>Sobre</h2>
+
+      <figure class="avatar">
+        <img src="https://lh3.googleusercontent.com/-D8ebK8N1jNU/Xr86jgGXF3I/AAAAAAAABMc/TvbWfz47DxweY4YAffRWYRTtnLCBcdYMQCEwYBhgLKs4DAL1OcqwhgOch1XxJiabAu2bbzs0kpuj6BseV6JAyFzrx0x06uvNCSgTXmIm-TUSYWpK0tWYwtyItaZJzSXetRwl20398I6uV1LJ3o5ziUaQB1CbP5Tu0hnyoaPIGq2325e0gYFscCezUPf7UgwQSZhWc4KFhAAZIxfDnqo2anNu7oaBZQZvCZ9dwyoxmb7tI7BDoGMN3WJgwtVI-WOT6bSD6CKPqRCrX_DUqKgMq7q3pFLjsEVAI34vuRz43u513wMOoTgN2yKQ1EV5AqItsMslXYLK36MLN0DWVrK7kGRq9Doux3itZmErqZ7u2dx-wvPQxv833ozn0esCWNNPENWzNGNbukqa-_QGJXj8FzDigF4u3y3Fq29D9WuE8ysMsw0PnogYsM-U9ydogZv0m3XQ_d0p8XRtkss6_mXAbL1fRUIEUzOMbiJZLZYXiCS8DFWuJtQqJkBEycEO8hHWb-8eACY8IvLNTB1e5fJ5ZNAOnpZhwmVPJPP5TWZZEnu--PUM7tbnbtJL__x7pvsz2sQalv7sVzgnMmzE9GuluOroQCckOo3R-q2V3qyT8xMBxJYM8ReRTwbYc1meilReIRIN74R39PXpUS1jJqAvvMPn5_PUF/w139-h140-p/foto-de-perfil.jpg" alt="Arthur Fernandez">
+      </figure>
+      <p>
+        Prazer, eu sou um jovem programador nas linguagens de java, html e css que busca se aprofundar nesses conhecimentos. No caso do Java estou apenas programando jogos com esta linguagem.
+      </p>
+      
+      <p>
+        Além de meus conhecimentos na área de informática, jogo diversos jogos e algumas vezes faço stream por diversão até o momento. Estou no terceiro ano do ensino médio.
+      </p>
+
+      <p>
+      Esse site foi construído durante a <a href="https://www.alura.com.br/imersao-css"> imersão CSS da Alura</a>       
+      </p>
+
+    </section>
+    <section class="portfolio container" id="portfolio">
+        <h2>Curriculo</h2>
+
+        <div class="grid"> 
+          
+          <div>
+              <div>
+                <figure>
+                <img class="img-portfolio" src="./img/certificado-newpoint.jpg" alt="Informatica">
+                <figcaption>Informatica</figcaption>
+              </figure>               
+            </div>
+          </div>
+          
+          <div>             
+                <figure>
+                  <img class="img-portfolio" src="./img/Java.jpg" alt=">Java">
+                  <figcaption>Jr. Game Developer Java</figcaption>
+                </figure> 
+          </div>
+           
+         
+          <figure>
+           <img class="img-portfolio" src="./img/css-html.jpg" alt="Web design">
+           <figcaption>Web design</figcaption>
+         </figure>
+
+            <div class="flip-card">
+              <div class="card">           
+                <figure class="card-front">
+                  <img class="img-portfolio1" src="./img/certificado-livemodel.jpg" alt="Modelo">
+                <figcaption>Modelo</figcaption>
+              </figure>
+                <div class="card-back">
+                  <iframe src="https://giphy.com/embed/Vuw9m5wXviFIQ" width="260" height="250" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rickroll-rick-astley-never-gonna-give-you-up-Vuw9m5wXviFIQ">via GIPHY</a></p>
+                </div>
+              </div>
+            </div>        
+        </div>
+      </section>
+
+<section class="contato container" id="contato">
+  <h2>Contato</h2>
+	<div class="grid icons">
+    <a target="_blank" href="https://github.com/TrollerSenpai">
+      <i class="fab fa-github"></i>
+    </a>
+    <a target="_blank" href="https://steamcommunity.com/profiles/76561198149633650/">
+      <i class="fab fa-steam"></i>
+    </a>
+    <a href="mailto:arthurgfernandez@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a target="_blank" href="https://twitch.com/trollersenpai">
+      <i class="fab fa-twitch"></i>
+    </a>
+  </div>
+</section>
+
+
 </body>
 </html>
