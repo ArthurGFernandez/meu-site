@@ -27,7 +27,7 @@
 
       <p>Prezados, bom dia. Estou com o meu site desatualizado a muito tempo e não pretendo atualizar ele tão cedo ainda.</p>
 
-        <p>Entretando, vou usar ele para testes e afins. Ele está linkado com uma planilha minha, pra marcar a presença de vocês e afins.</p>
+        <p>Entretando, vou usar ele para testes e afins. Ele está linkado com uma planilha minha, pra marcar a presença de vocês.</p>
 
         <p>Preencha os campos abaixo e clique em enviar.</p>
 
@@ -36,20 +36,21 @@
             <input type="text" name="nome" required><br><br>
 
             <label>Nome do Acompanhante:</label>
-            <input type="text" name="nome2" required><br><br>
+            <input type="text" name="nome2"><br><br>
 
             <label>Observações:</label>
             <input type="text" name="resposta1"><br><br>
 
-            <label>Data escolhida:</label>
+            <label>Data em que foi preenchido:</label>
             <input type="date" name="data1"><br><br>
 
             <p>Selecione as opções desejadas:</p>
-            <input type="checkbox" name="opcao" value="Confirmado"> Confirmado<br>
-            <input type="checkbox" name="opcao" value="Não Irei"> Não Irei<br><br>
+            <input type="checkbox" name="opcao" value="Confirmado" id="confirmado" onclick="alternarPresenca(this)"> Confirmado<br>
+            <input type="checkbox" name="opcao" value="Não Irei" id="naoIrei" onclick="alternarPresenca(this)"> Não Irei<br><br>
+
 
             <input type="checkbox" name="opcao" value="Levar Bebida"> Vou levar bebida<br>
-            <input type="checkbox" name="opcao" value="Rachar Bebida"> Vou fazer parte do racha<br>
+            <input type="checkbox" name="opcao" value="Rachar Bebida"> Vou fazer parte do Racha<br>
             <input type="checkbox" name="opcao" value="Não Bebo"> Não vou beber<br>
 
 
@@ -114,6 +115,17 @@
   </div>
 </section>
     <script>
+        function alternarPresenca(checkbox) {
+            const confirmado = document.getElementById("confirmado");
+            const naoIrei = document.getElementById("naoIrei");
+
+            if (checkbox === confirmado && confirmado.checked) {
+                naoIrei.checked = false;
+            } else if (checkbox === naoIrei && naoIrei.checked) {
+                confirmado.checked = false;
+            }
+        }
+
         document.getElementById('myForm').addEventListener('submit', function(e) {
             e.preventDefault(); // Impede o envio padrão
 
