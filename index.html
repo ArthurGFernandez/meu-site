@@ -23,22 +23,45 @@
         </div>         
     </header> 
     <section class="sobre container" id="sobre">
-      <h2>Sobre</h2>
+      <h2>Aniversário 17/05/2025 - 20:00</h2>
 
-      <figure class="avatar">
-        <img src="https://lh3.googleusercontent.com/-D8ebK8N1jNU/Xr86jgGXF3I/AAAAAAAABMc/TvbWfz47DxweY4YAffRWYRTtnLCBcdYMQCEwYBhgLKs4DAL1OcqwhgOch1XxJiabAu2bbzs0kpuj6BseV6JAyFzrx0x06uvNCSgTXmIm-TUSYWpK0tWYwtyItaZJzSXetRwl20398I6uV1LJ3o5ziUaQB1CbP5Tu0hnyoaPIGq2325e0gYFscCezUPf7UgwQSZhWc4KFhAAZIxfDnqo2anNu7oaBZQZvCZ9dwyoxmb7tI7BDoGMN3WJgwtVI-WOT6bSD6CKPqRCrX_DUqKgMq7q3pFLjsEVAI34vuRz43u513wMOoTgN2yKQ1EV5AqItsMslXYLK36MLN0DWVrK7kGRq9Doux3itZmErqZ7u2dx-wvPQxv833ozn0esCWNNPENWzNGNbukqa-_QGJXj8FzDigF4u3y3Fq29D9WuE8ysMsw0PnogYsM-U9ydogZv0m3XQ_d0p8XRtkss6_mXAbL1fRUIEUzOMbiJZLZYXiCS8DFWuJtQqJkBEycEO8hHWb-8eACY8IvLNTB1e5fJ5ZNAOnpZhwmVPJPP5TWZZEnu--PUM7tbnbtJL__x7pvsz2sQalv7sVzgnMmzE9GuluOroQCckOo3R-q2V3qyT8xMBxJYM8ReRTwbYc1meilReIRIN74R39PXpUS1jJqAvvMPn5_PUF/w139-h140-p/foto-de-perfil.jpg" alt="Arthur Fernandez">
-      </figure>
-      <p>
-        Prazer, eu sou um jovem programador nas linguagens de java, html e css que busca se aprofundar nesses conhecimentos. No caso do Java estou apenas programando jogos com esta linguagem.
-      </p>
-      
-      <p>
-        Além de meus conhecimentos na área de informática, jogo diversos jogos e algumas vezes faço stream por diversão até o momento.
-      </p>
+      <p>Prezados, bom dia. Estou com o meu site desatualizado a muito tempo e não pretendo atualizar ele tão cedo ainda.</p>
 
-      <p>
-      Esse site foi construído durante a <a href="https://www.alura.com.br/imersao-css"> imersão CSS da Alura</a>       
-      </p>
+        <p>Entretando, vou usar ele para testes e afins. Ele está linkado com uma planilha minha, pra marcar a presença de vocês e afins.</p>
+
+        <p>Preencha os campos abaixo e clique em enviar.</p>
+
+        <form id="myForm">
+            <label>Nome:</label>
+            <input type="text" name="nome" required><br><br>
+
+            <label>Nome do Acompanhante:</label>
+            <input type="text" name="nome2" required><br><br>
+
+            <label>Observações:</label>
+            <input type="text" name="resposta1"><br><br>
+
+            <label>Data escolhida:</label>
+            <input type="date" name="data1"><br><br>
+
+            <p>Selecione as opções desejadas:</p>
+            <input type="checkbox" name="opcao" value="Levar Bebida"> Vou levar bebida<br>
+            <input type="checkbox" name="opcao" value="Rachar Bebida"> Vou fazer parte do racha<br>
+            <input type="checkbox" name="opcao" value="Não Bebo"> Não vou beber<br>
+            <input type="checkbox" name="opcao" value="Confirmado"> Confirmado<br>
+            <input type="checkbox" name="opcao" value="Não Irei"> Não Irei<br><br>
+
+            <!-- Campo oculto para agrupar as checkboxes -->
+            <input type="hidden" name="opcoesSelecionadas" id="opcoesSelecionadas">
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <h2>Caso já queira deixar pago, aqui está o PIX. Mandar comprovante pelo whats.</h2>
+        <figure class="avatar">
+            <img src="./img/Pix.jpg" alt="Arthur Fernandez">
+        </figure>
+
 
     </section>
     <section class="portfolio container" id="portfolio">
@@ -68,17 +91,6 @@
            <figcaption>Web design</figcaption>
          </figure>
 
-            <div class="img-portfolio">
-              <div class="card">           
-                <figure class="card-front">
-                  <img class="img-portfolio1" src="./img/certificado-livemodel.jpg" alt="Modelo">
-                <figcaption>Modelo</figcaption>
-              </figure>
-                <div class="card-back">
-                  <iframe src="https://giphy.com/embed/Vuw9m5wXviFIQ" width="260" height="250" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rickroll-rick-astley-never-gonna-give-you-up-Vuw9m5wXviFIQ">via GIPHY</a></p>
-                </div>
-              </div>
-            </div>        
         </div>
       </section>
 
@@ -99,7 +111,51 @@
     </a>
   </div>
 </section>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede o envio padrão
 
+            const form = e.target;
+            const nome = form.nome.value.trim();
+            const nome2 = form.nome2.value.trim();
+
+            // Validação básica
+            if (!nome) {
+                alert("Por favor, preencha nome.");
+                return;
+            }
+
+            // Pega checkboxes marcadas
+            const checkboxes = document.querySelectorAll('input[name="opcao"]:checked');
+            if (checkboxes.length === 0) {
+                alert("Selecione ao menos uma opção.");
+                return;
+            }
+
+            const selected = Array.from(checkboxes).map(cb => cb.value).join(', ');
+            document.getElementById('opcoesSelecionadas').value = selected;
+
+            // Envia via AJAX
+            const formData = new FormData(form);
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://script.google.com/macros/s/AKfycbxbfKj4swlxLxdAFkcNmdVVUIlOmx6vdB8pCmkid29AVZHfQWPMZkVtvwW9BzNjwHPd_w/exec', true);
+
+            xhr.onload = function() {
+                if (xhr.status === 200 && xhr.responseText === "Success") {
+                    alert("Formulário enviado com sucesso!");
+                    form.reset(); // Limpa o formulário
+                } else {
+                    alert("Erro ao enviar: " + xhr.responseText);
+                }
+            };
+
+            xhr.onerror = function() {
+                alert("Erro de conexão ao enviar o formulário.");
+            };
+
+            xhr.send(formData);
+        });
+    </script>
 
 </body>
 </html>
